@@ -16,19 +16,21 @@ git clone https://github.com/18F/golang_workshop_irl_2016.git src/github.com/18F
 
 # run the setup script
 src/github.com/18F/golang_workshop_irl_2016/scripts/goup.sh && source $HOME/.gvm/scripts/gvm
+```
 
+## Let's Start Everything Up!
+```
+# use this section of commands every time you want to start / resume this tutorial
+
+# make sure you are in your workspace.
 # establish go workspace formally
 export GOPATH=$(pwd)
 
 # change directory into the location of the cloned repo
 cd src/github.com/18F/golang_workshop_irl_2016/
-```
 
-## Let's Start Everything Up!
-```
-# start the ide and download tools
+# start the ide and download / update tools
 scripts/goprojectup.sh
-# use this every time you want to resume this tutorial
 ```
 
 ## Getting Started
