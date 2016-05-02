@@ -8,7 +8,7 @@ Clean up go installation and optionally 3rd party apps. Default is just GVM
 
     -h          display this help and exit
     -a          remove gvm AND Visual Studio Code.
-    		Useful if you don't plan on using Visual Studio Code.
+                Useful if you don\'t plan on using Visual Studio Code.
 EOF
 }
 OPTIND=1
