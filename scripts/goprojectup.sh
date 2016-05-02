@@ -11,5 +11,5 @@ go get -u -v github.com/newhook/go-symbols
 go get -u -v golang.org/x/tools/cmd/guru
 go get -u -v github.com/derekparker/delve/cmd/dlv
 
-sed -e "s~\${goroot}~$GOROOT~" -e "s~\${gopath}~$GOPATH~" settings.json.example > settings.json
-open -a "Visual Studio Code" $(dirname $0)
+sed -e "s~\${goroot}~$GOROOT~" -e "s~\${gopath}~$GOPATH~" $(dirname $0)/../configs/settings.json.example > $(dirname $0)/../settings.json
+open -a "Visual Studio Code" $(dirname $0)/../
