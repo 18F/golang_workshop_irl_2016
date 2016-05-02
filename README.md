@@ -10,16 +10,16 @@ mkdir golang_workshop_ws
 cd golang_workshop_ws
 
 # clone the repo into the correct location of the workspace
-git clone https://github.com/jcscottiii/golang_workshop.git src/github.com/jcscottiii/golang_workshop
+git clone https://github.com/18F/golang_workshop_irl_2016.git src/github.com/18F/golang_workshop_irl_2016
 
 # run the setup script
-src/github.com/jcscottiii/golang_workshop/scripts/goup.sh && source $HOME/.gvm/scripts/gvm
+src/github.com/18F/golang_workshop_irl_2016/scripts/goup.sh && source $HOME/.gvm/scripts/gvm
 
 # establish go workspace formally
 export GOPATH=$(pwd)
 
 # change directory into the location of the cloned repo
-cd src/github.com/jcscottiii/golang_workshop/
+cd src/github.com/18F/golang_workshop_irl_2016/
 
 # start the ide and download tools
 scripts/goprojectup.sh
