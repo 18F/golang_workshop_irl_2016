@@ -16,6 +16,10 @@ There's a special package name that indicates this is the entry point to a runna
 ### Imports
 We need to print out some text. `"fmt"` handles I/O and can be used to write to screen, file, or any destination\*. If you want to look at all the standard libraries check out this [link](https://golang.org/pkg/)
 
+```go
+import "fmt"
+```
+
 ### Code
 
 #### Functions
@@ -50,11 +54,11 @@ func main() {
 ```go
 package main
 
-func SayHello() string {
+func sayHello() string {
 	return "Hello World"
 }
 
 func main() {
-	fmt.Println(SayHello())
+	fmt.Println(sayHello())
 }
 ```

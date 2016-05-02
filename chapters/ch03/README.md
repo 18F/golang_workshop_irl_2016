@@ -21,10 +21,10 @@ Similarly to chapter 02, we will need to write text out, so we will need `"fmt"`
 
 #### Functions
 ##### SayHello()
-Let's re-use the `SayHello()` from chapter 02.
+Let's re-use the `sayHello()` from chapter 02.
 
 ```go
-func SayHello() string {
+func sayHello() string {
 	return "Hello World"
 }
 ```
