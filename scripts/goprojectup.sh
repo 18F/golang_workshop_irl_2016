@@ -1,15 +1,15 @@
 #!/bin/bash
 
-go get -u -v github.com/nsf/gocode
-go get -u -v github.com/rogpeppe/godef
-go get -u -v github.com/golang/lint/golint
-go get -u -v github.com/lukehoban/go-outline
-go get -u -v sourcegraph.com/sqs/goreturns
-go get -u -v golang.org/x/tools/cmd/gorename
-go get -u -v github.com/tpng/gopkgs
-go get -u -v github.com/newhook/go-symbols
-go get -u -v golang.org/x/tools/cmd/guru
-go get -u -v github.com/derekparker/delve/cmd/dlv
+if ! [ -x "$(command -v $GOPATH/bin/dlv)" ]; then
+	echo -e "Installing delve"
+	#Get updated versions from https://bintray.com/jetbrains/golang/delve/view#files/com/jetbrains/delve
+	ZIP_FILE=delve.zip
+	DOWLOAD_FOLDER=delve
+	wget -O $ZIP_FILE https://bintray.com/jetbrains/golang/download_file?file_path=com%2Fjetbrains%2Fdelve%2F0.10.231%2Fdelve-0.10.231.zip
+	unzip -o $ZIP_FILE -d $DOWLOAD_FOLDER
+	cp $DOWLOAD_FOLDER/dlv/mac/dlv $GOPATH/bin/
+	rm $ZIP_FILE
+	rm -rf $DOWLOAD_FOLDER
+fi
 
-sed -e "s~\${goroot}~$GOROOT~" -e "s~\${gopath}~$GOPATH~" $(dirname $0)/../configs/settings.json.example > $(dirname $0)/../.vscode/settings.json
-open -a "Visual Studio Code" $(dirname $0)/../
+atom $(dirname $0)/../

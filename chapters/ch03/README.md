@@ -20,7 +20,7 @@ Similarly to chapter 02, we will need to write text out, so we will need `"fmt"`
 ### Code
 
 #### Functions
-##### SayHello()
+##### sayHello()
 Let's re-use the `sayHello()` from chapter 02.
 
 ```go
@@ -31,11 +31,11 @@ func sayHello() string {
 
 #### Route Handler
 We want the server to respond "Hello World" when a user hits the index route "/".
-If you look up the docs for "net/http", you would see there's a `HandleFunc(pattern string, handler func(ResponseWriter, *Request))` function. We can make the `pattern` equal to `"/"`. However, `SayHello() string` does not meet the function type needed for the second parameter. We need to write a second function that meets that prototype.
+If you look up the docs for "net/http", you would see there's a `HandleFunc(pattern string, handler func(ResponseWriter, *Request))` function. We can make the `pattern` equal to `"/"`. However, `sayHello() string` does not meet the function type needed for the second parameter. We need to write a second function that meets that prototype.
 
 ```go
 func rootHandler(w http.ResponseWriter, req *http.Request) {
-	fmt.Fprintln(w, SayHello())	
+	fmt.Fprintln(w, sayHello())
 }
 ```
 
@@ -59,12 +59,17 @@ func main() {
 ```go
 package main
 
-func SayHello() string {
+import (
+	"fmt"
+	"net/http"
+)
+
+func sayHello() string {
 	return "Hello World"
 }
 
 func rootHandler(w http.ResponseWriter, req *http.Request) {
-	fmt.Fprintln(w, SayHello())	
+	fmt.Fprintln(w, sayHello())
 }
 
 func main() {
@@ -73,4 +78,3 @@ func main() {
 }
 
 ```
-

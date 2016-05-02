@@ -30,39 +30,31 @@ exit_on_fail $GVM install go1.6.2
 exit_on_fail gvm use go1.6.2 --default
 go version
 
-# Install VSCode
+# Install the IDE
 # You can get the link by downloading the file in Chrome from http://code.visualstudio.com/
 # Then go to the downloads view "chrome://downloads/.
 # You should see the url for the downloaded file.
-VSCODE_APP_NAME=Visual\ Studio\ Code.app
-ls /Applications/"${VSCODE_APP_NAME}" >/dev/null 2>&1
+APP_NAME=Atom.app
+ls /Applications/"${APP_NAME}" >/dev/null 2>&1
 if [ $? != 0 ]; then
-	VSCODE_ZIP=VSCode.zip
-	VSCODE_DOWLOAD_FOLDER=vscode
-	VSCODE_APP_SRC=$VSCODE_DOWLOAD_FOLDER/$VSCODE_APP_NAME
-	echo -e "Installing Visual Studio Code version 1.0.0"
-	exit_on_fail wget -O $VSCODE_ZIP https://az764295.vo.msecnd.net/stable/fa6d0f03813dfb9df4589c30121e9fcffa8a8ec8/VSCode-darwin-stable.zip
-	exit_on_fail unzip -o $VSCODE_ZIP -d $VSCODE_DOWLOAD_FOLDER
-	exit_on_fail cp -R "${VSCODE_APP_SRC}" "/Applications/"
-	exit_on_fail rm -rf $VSCODE_DOWLOAD_FOLDER
-	exit_on_fail rm $VSCODE_ZIP
-	echo -e "Cleaning up Visual Studio Code Install"
+	ZIP_FILE=atom.zip
+	DOWLOAD_FOLDER=atom
+	APP_SRC=$DOWLOAD_FOLDER/$APP_NAME
+	echo -e "Installing IDE"
+	exit_on_fail wget -O $ZIP_FILE https://atom-installer.github.com/v1.7.3/atom-mac.zip
+	exit_on_fail unzip -o $ZIP_FILE -d $DOWLOAD_FOLDER
+	exit_on_fail cp -R "${APP_SRC}" "/Applications/"
+	exit_on_fail rm -rf $DOWLOAD_FOLDER
+	exit_on_fail rm $ZIP_FILE
+	echo -e "Cleaning up IDE Install"
 fi
-echo -e "Visual Studio Code Installed\n"
 
-# Install NVM
-if ! [ -x "$(command -v $NVM_DIR/nvm.sh)" ]; then
-	echo -e "Installing nvm"
-	exit_on_fail curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
-	NVM_DIR=$HOME/.nvm
-fi
-. "$NVM_DIR/nvm.sh"
-echo -e "nvm Installed"
+echo -e "IDE Installed\n"
 
-nvm install 5.0
-nvm use 5.0
-
-npm install -g vsce && git clone https://github.com/Microsoft/vscode-go $HOME/.vscode/extensions/lukehoban.Go && pushd $HOME/.vscode/extensions/lukehoban.Go && npm install && vsce package && popd
+exit_on_fail apm install go-plus
+exit_on_fail apm enable go-plus
+exit_on_fail apm install go-debug
+exit_on_fail apm enable go-debug
 
 echo -e "Success!"
 echo -e "Run 'source $GVM_ROOT/scripts/gvm'"

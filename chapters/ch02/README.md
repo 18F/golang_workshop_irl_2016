@@ -3,7 +3,7 @@
 
 ## Goal
 
-Create a simple exectuable that says Hello World"
+Create a simple executable that says Hello World"
 
 
 ## Let's Start
@@ -28,7 +28,7 @@ import "fmt"
 Let's create a function that returns a string (which will be "Hello World").
 
 ```go
-func SayHello() string {
+func sayHello() string {
 	return "Hello World"
 }
 ```
@@ -36,16 +36,16 @@ func SayHello() string {
 *Note: For those coming from other languages, the return value(s), is at the end of the function declaration*
 
 ##### main()
-Whenever we use the package name `main`, Go is expecting you to have a `main` function which will be the entrypoint. Let's setup our web server and have it return the string from our `SayHello` function.
+Whenever we use the package name `main`, Go is expecting you to have a `main` function which will be the entrypoint. Let's setup our web server and have it return the string from our `sayHello` function.
 
 ```go
 func main() {
-	fmt.Println(SayHello())
+	fmt.Println(sayHello())
 }
 
 ```
 
-### Execution
+### Execution from root of repository
 
 `$ go run ch02.go`
 
@@ -53,6 +53,8 @@ func main() {
 ### Full Code
 ```go
 package main
+
+import "fmt"
 
 func sayHello() string {
 	return "Hello World"

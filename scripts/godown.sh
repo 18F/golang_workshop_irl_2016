@@ -7,8 +7,8 @@ Usage: ${0##*/} [-ha]
 Clean up go installation and optionally 3rd party apps. Default is just GVM
 
     -h          display this help and exit
-    -a          remove gvm AND Visual Studio Code.
-                Useful if you don\'t plan on using Visual Studio Code.
+    -a          remove gvm AND the IDE.
+                Useful if you don\'t plan on using the IDE.
 EOF
 }
 OPTIND=1
@@ -32,8 +32,10 @@ shift "$((OPTIND-1))" # Shift off the options and optional --.
 source $GVM_ROOT/scripts/gvm
 yes | gvm implode
 if [ $all == 1 ]; then
-	echo -e "Removing Visual Studio Code"
-	VSCODE_APP_NAME=Visual\ Studio\ Code.app
-	rm -rf /Applications/"${VSCODE_APP_NAME}"
+	echo -e "Removing IDE"
+	apm uninstall go-plus
+	apm uninstall go-debug
+	APP_NAME=Atom.app
+	rm -rf /Applications/"${APP_NAME}"
 fi
 
