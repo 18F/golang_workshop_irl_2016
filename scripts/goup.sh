@@ -31,7 +31,7 @@ exit_on_fail gvm use go1.6.2 --default
 go version
 
 # Install the IDE
-# You can get the link by downloading the file in Chrome from http://code.visualstudio.com/
+# You can get the link by downloading the file in Chrome from https://atom.io/
 # Then go to the downloads view "chrome://downloads/.
 # You should see the url for the downloaded file.
 APP_NAME=Atom.app
