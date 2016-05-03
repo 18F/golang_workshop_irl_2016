@@ -8,6 +8,10 @@
 
 Demonstrate how to use a debugger with Go to inspect variables.
 
+## Let's Start
+
+We will modify the code we developed in [Chapter 05](../ch05/README.md). The final code from chapter 05 has been copied into [ch06.go](ch06.go).
+
 ## Open Output panel
 
 On the bottom right corner, there's a button to "Toggle output panel".
@@ -24,8 +28,9 @@ Add breakpoints by clicking on the space left of the line number.
 ## Slow down the scheduler.
 
 Right now, the debugger in Atom does not work 100%. If we have a breakpoint in the scheduler thread / goroutine  (which runs every 5 seconds) and a breakpoint in the handler routine whenever we receive a request, it can strain Atom.
-For now, set the scheduler to run 120 seconds:
 
+
+**Note**: For now, the code in [ch06.go](ch06.go) has already set the scheduler to run `120` seconds for you (no need to do anything) to accommodate for this potential strain:
 ```go
 scheduler.Every(120).Seconds().Run(job)
 ```

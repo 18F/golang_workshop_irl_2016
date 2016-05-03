@@ -68,6 +68,13 @@ import (
 // Code, code, code, code
 ```
 
+## Common Go commands
+
+- `go build` - Compiles and builds the package along with Dependencies
+- `go run <filename.go>` - Compiles and runs an executable Go program
+- `go test` - Runs test in the package.
+- `go test ./...` - Runs tests recursively.
+
 ## FAQs
 
 - Should I only use 1 GOPATH for all projects or a separate GOPATH for each individual project?

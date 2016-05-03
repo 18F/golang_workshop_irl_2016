@@ -11,7 +11,7 @@ Create a simple web server that responds "Hello World" that also prints out stat
 
 ## Let's Start
 
-We will use the code from chapter 03 to start with already located in ch04.go
+We will modify the code we developed in [Chapter 03](../ch03/README.md) to use external libraries / dependencies. There is code in [ch04.go](ch04.go) as a starting point.
 
 ## Let's get `stats` on our server
 
@@ -50,6 +50,8 @@ var (
 	statsMiddleware *stats.Stats
 )
 ```
+
+**Note: We create a static variable for simplicity for now so all functions (e.g. our handler function described in the subsection after the next) but there are ways to avoid it**
 
 ## Create the middleware and wrap the mux
 ```go

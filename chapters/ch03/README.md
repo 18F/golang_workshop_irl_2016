@@ -11,20 +11,17 @@ Create a simple web server that responds "Hello World"
 
 ## Let's Start
 
-We will use the code from chapter 02 to start with.
-
-### Package Name
-There's a special package name that indicates this is the entry point to a runnable program vs a library. It's called `main`. Let's use that.
+We will modify the code we developed in [Chapter 02](../ch02/README.md) to expand it to handle web servers. There is code in [ch03.go](ch03.go) as a starting point.
 
 ### Imports
 Out of the box, Go has a rich set of libraries. For a web server, just import the `"net/http"` package.
-Similarly to chapter 02, we will need to write text out, so we will need `"fmt"`.
+Similarly to [Chapter 02](../ch02/README.md), we will need to write text out, so we will need `"fmt"`.
 
 ### Code
 
 #### Functions
 ##### sayHello()
-Let's re-use the `sayHello()` from chapter 02.
+Let's re-use the `sayHello()` from [Chapter 02](../ch02/README.md).
 
 ```go
 func sayHello() string {
@@ -41,7 +38,12 @@ mux := http.NewServeMux()
 
 #### Route Handler
 We want the server to respond "Hello World" when a user hits the index route "/hi".
-If you look up the docs for "net/http", you would see there's a `func (mux *ServeMux) HandleFunc(pattern string, handler func(ResponseWriter, *Request))` function to hook into our `mux`. We can make the `pattern` equal to `"/"`. However, `sayHello() string` does not meet the function type needed for the second parameter. We need to write a second function that meets that prototype.
+If you look up the docs for "net/http", you would see there's a function to hook into our `mux`:
+
+```go
+func (mux *ServeMux) HandleFunc(pattern string, handler func(ResponseWriter, *Request))
+```
+We can make the `pattern` equal to `"/hi"`. However, `sayHello() string` does not meet the function type needed for the second parameter. We need to write a second function that meets that prototype.
 
 ```go
 func hiHandler(w http.ResponseWriter, req *http.Request) {
@@ -57,7 +59,7 @@ Let's have main setup the server.
 ```go
 func main() {
 	mux := http.NewServeMux()
-	mux.HandleFunc("/", hiHandler)
+	mux.HandleFunc("/hi", hiHandler)
 	http.ListenAndServe(":8080", mux)
 }
 ```

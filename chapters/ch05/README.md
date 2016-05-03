@@ -47,6 +47,7 @@ go get github.com/carlescere/scheduler
 go get github.com/augurysys/pinger
 ```
 
+Now you can add the dependencies in the code:
 ```go
 import (
   // Other imports
@@ -93,6 +94,10 @@ job := func() {
 scheduler.Every(5).Seconds().Run(job)
 ```
 
+### Execution
+
+`$ go run ch05.go`
+
 ## Full Code
 
 ```go
@@ -134,7 +139,7 @@ func main() {
 			bodyStr = string(body) // Ignore this line for now.
 		} else {
 			siteUp = true
-			bodyStr = string(body) // Ignore this lines for now.
+			bodyStr = string(body) // Ignore this line for now.
 		}
 		_ = bodyStr // Ignore this line for now.
 		_ = status  // Ignore this line for now.
