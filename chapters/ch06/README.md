@@ -28,7 +28,7 @@ scheduler.Every(120).Seconds().Run(job)
 
 ## Start debugging.
 
-0. Press "Debug"
+0. Press "Debug" in the top right corner.
 0. Press the play button once to start the program.
 0. It should break on the first iteration of the scheduled job. Hit the "right" arrow to go to the next instruction and inspect the variables.
 0. Once done with job, press the "play" button and open your browser to [http://localhost:8080/check](http://localhost:8080/check) and it should break on the `checkHandler`
