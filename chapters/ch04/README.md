@@ -1,5 +1,9 @@
 # Chapter 04 - Importing Dependencies
 
+---
+#### [Previous Chapter](../ch03/README.md) | [Table of Contents](../README.md) | [Next Chapter](../ch05/README.md)
+---
+
 ## Goal
 
 Create a simple web server that responds "Hello World" that also prints out stats generated from an imported external dependency.
@@ -110,3 +114,7 @@ func main() {
 	http.ListenAndServe(":8080", statsMiddleware.Handler(mux))
 }
 ```
+
+---
+#### [Previous Chapter](../ch03/README.md) | [Table of Contents](../README.md) | [Next Chapter](../ch05/README.md)
+---

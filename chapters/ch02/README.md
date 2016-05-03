@@ -1,5 +1,9 @@
 # Chapter 02 - Hello World
 
+---
+#### [Previous Chapter](../ch01/README.md) | [Table of Contents](../README.md) | [Next Chapter](../ch03/README.md)
+---
+
 
 ## Goal
 
@@ -64,3 +68,7 @@ func main() {
 	fmt.Println(sayHello())
 }
 ```
+
+---
+#### [Previous Chapter](../ch01/README.md) | [Table of Contents](../README.md) | [Next Chapter](../ch03/README.md)
+---

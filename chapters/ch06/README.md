@@ -1,5 +1,9 @@
 # Chapter 06 - Using a debugger!
 
+---
+#### [Previous Chapter](../ch05/README.md) | [Table of Contents](../README.md) | [Next Chapter](../ch07/README.md)
+---
+
 ## Goal
 
 Demonstrate how to use a debugger with Go to inspect variables.
@@ -33,3 +37,7 @@ scheduler.Every(120).Seconds().Run(job)
 0. It should break on the first iteration of the scheduled job. Hit the "right" arrow to go to the next instruction and inspect the variables.
 0. Once done with job, press the "play" button and open your browser to [http://localhost:8080/check](http://localhost:8080/check) and it should break on the `checkHandler`
 0. Press the stop button to finally stop debugging.
+
+---
+#### [Previous Chapter](../ch05/README.md) | [Table of Contents](../README.md) | [Next Chapter](../ch07/README.md)
+---

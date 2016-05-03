@@ -1,5 +1,10 @@
 # Chapter 01 - Quick Concepts
 
+---
+#### [Table of Contents](../README.md) | [Next Chapter](../ch02/README.md)
+---
+
+
 ## GOPATH
 
 $GOPATH is essentially your project workspace. The environment variable must be set. Once set, the Go Toolchain will know where to place everything.
@@ -67,3 +72,7 @@ import (
 
 - Should I only use 1 GOPATH for all projects or a separate GOPATH for each individual project?
   - Depends. However, typically you use a separate workspace / GOPATH per project. It prevents pollution of dependent libraries. For example if project A use library Foo @ v2.0, and project B uses library Foo @ v3.0, the non-vendored dependency library could not exist in both versions in the same GOPATH.
+
+---
+#### [Table of Contents](../README.md) | [Next Chapter](../ch02/README.md)
+---

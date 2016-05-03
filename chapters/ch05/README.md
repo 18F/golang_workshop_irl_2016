@@ -1,4 +1,8 @@
-# Chapter 05 - Scheduling a ping to a link
+# Chapter 05 - Creating a simple health checker
+
+---
+#### [Previous Chapter](../ch04/README.md) | [Table of Contents](../README.md) | [Next Chapter](../ch06/README.md)
+---
 
 ## Goal
 
@@ -145,3 +149,7 @@ func main() {
 }
 
 ```
+
+---
+#### [Previous Chapter](../ch04/README.md) | [Table of Contents](../README.md) | [Next Chapter](../ch06/README.md)
+---
