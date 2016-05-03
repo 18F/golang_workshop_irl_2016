@@ -2,6 +2,15 @@
 
 This repository contains workshop material for the 2016 18F IRL Golang Workshop
 
+## Overview
+
+This Workshop will go through:
+- Go Basics
+- Creating a web server
+- Creating a simple web health checker
+- Using a debugger
+- Intro to Go testing
+
 For the Table of Contents, refer to [here](chapters/README.md)
 
 ## One Time Setup
@@ -34,7 +43,7 @@ scripts/goprojectup.sh
 ```
 
 ## Getting Started
-If these steps look a little foreign, it's a great time to dive into [chapter 01](chapters/ch01/README.md)
+If these steps look a little foreign, it's a great time to dive into [Chapter 01](chapters/ch01/README.md)
 
 ## Oh no, I don't want this on my computer anymore.
 ```
