@@ -24,7 +24,7 @@ import "fmt"
 
 #### Functions
 
-##### SayHello()
+##### sayHello()
 Let's create a function that returns a string (which will be "Hello World").
 
 ```go

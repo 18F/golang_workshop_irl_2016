@@ -8,7 +8,7 @@ Create a simple web server that responds "Hello World"
 
 ## Let's Start
 
-Refer to the template in chapter 01 for the code and fill in and can compare with the completed code at the end.
+We will use the code from chapter 02 to start with.
 
 ### Package Name
 There's a special package name that indicates this is the entry point to a runnable program vs a library. It's called `main`. Let's use that.
@@ -29,12 +29,19 @@ func sayHello() string {
 }
 ```
 
-#### Route Handler
-We want the server to respond "Hello World" when a user hits the index route "/".
-If you look up the docs for "net/http", you would see there's a `HandleFunc(pattern string, handler func(ResponseWriter, *Request))` function. We can make the `pattern` equal to `"/"`. However, `sayHello() string` does not meet the function type needed for the second parameter. We need to write a second function that meets that prototype.
+#### Mux
+We need a multiplexer to route the various calls.
 
 ```go
-func rootHandler(w http.ResponseWriter, req *http.Request) {
+mux := http.NewServeMux()
+```
+
+#### Route Handler
+We want the server to respond "Hello World" when a user hits the index route "/hi".
+If you look up the docs for "net/http", you would see there's a `func (mux *ServeMux) HandleFunc(pattern string, handler func(ResponseWriter, *Request))` function to hook into our `mux`. We can make the `pattern` equal to `"/"`. However, `sayHello() string` does not meet the function type needed for the second parameter. We need to write a second function that meets that prototype.
+
+```go
+func hiHandler(w http.ResponseWriter, req *http.Request) {
 	fmt.Fprintln(w, sayHello())
 }
 ```
@@ -46,8 +53,9 @@ Let's have main setup the server.
 
 ```go
 func main() {
-	http.HandleFunc("/", rootHandler)
-	http.ListenAndServe(":8080", nil)
+	mux := http.NewServeMux()
+	mux.HandleFunc("/", hiHandler)
+	http.ListenAndServe(":8080", mux)
 }
 ```
 
@@ -68,13 +76,13 @@ func sayHello() string {
 	return "Hello World"
 }
 
-func rootHandler(w http.ResponseWriter, req *http.Request) {
+func hiHandler(w http.ResponseWriter, req *http.Request) {
 	fmt.Fprintln(w, sayHello())
 }
 
 func main() {
-	http.HandleFunc("/", rootHandler)
-	http.ListenAndServe(":8080", nil)
+	mux := http.NewServeMux()
+	mux.HandleFunc("/hi", hiHandler)
+	http.ListenAndServe(":8080", mux)
 }
-
 ```
