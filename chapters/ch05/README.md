@@ -77,7 +77,7 @@ job := func() {
 
 ## Schedule the job in main()
 ```go
-scheduler.Every(30).Seconds().Run(job)
+scheduler.Every(5).Seconds().Run(job)
 ```
 
 ## Full Code
