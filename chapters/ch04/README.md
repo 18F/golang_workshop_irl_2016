@@ -62,6 +62,8 @@ func main() {
 }
 ```
 
+**Note: statsMiddleware is a normal "=" and not a ":="**
+
 ## Create a new handle function to print out the stats as shown in [this example](https://github.com/thoas/stats/blob/master/examples/negroni/server.go#L24).
 ```go
 func statsHandler(w http.ResponseWriter, req *http.Request) {
