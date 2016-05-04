@@ -30,7 +30,7 @@ func sayHello() string {
 ```
 
 #### Mux
-We need a multiplexer to route the various calls.
+We need a multiplexer to route the various calls. Put this in the top of the `main` function before all other calls.
 
 ```go
 mux := http.NewServeMux()
