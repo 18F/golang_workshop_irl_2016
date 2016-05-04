@@ -75,6 +75,12 @@ func statsHandler(w http.ResponseWriter, req *http.Request) {
 
 **Make sure you import the `"encoding/json"` package.***
 
+## Add a route to the mux for `/stats`
+```go
+mux.HandleFunc("/stats", statsHandler)
+```
+
+
 ## Execution
 
 `$ go run ch04.go`
