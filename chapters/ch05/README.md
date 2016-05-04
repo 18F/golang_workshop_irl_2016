@@ -44,7 +44,7 @@ Let's import a 1) scheduler and a 2) pinger!!
 Run:
 ```
 go get github.com/carlescere/scheduler
-go get github.com/augurysys/pinger
+go get github.com/tobio/pinger
 ```
 
 Now you can add the dependencies in the code:
